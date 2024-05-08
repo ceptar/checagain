@@ -13,7 +13,7 @@ import { Eye, Storefront } from 'phosphor-react'
 
 const remoteURL = window.location.protocol + '//' + window.location.hostname
 const localURL = 'http://localhost:3000'
-const frontendURL =
+const frontendURL = 'https://san-ceptars-projects.vercel.app'
   window.location.hostname === 'localhost' ? localURL : remoteURL
 
 const singletons = [
@@ -39,7 +39,7 @@ const PreviewAction = props => {
     icon: () => <Eye weight="light" data-sanity-icon="eye" />,
     onHandle: () => {
       window.open(
-        `${frontendURL}/api/preview?token=HULL&type=${props.type}&slug=${slug ||
+        `${frontendURL}/api/preview?token=12gregorhaus34&type=${props.type}&slug=${slug ||
           ''}`
       )
     }

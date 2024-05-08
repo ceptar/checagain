@@ -4,11 +4,10 @@ import { verifyWebhook } from '@chec/webhook-verifier';
 
 // Initialize Sanity client
 const sanity = sanityClient({
-  dataset: 'discobabes',
-  projectId: 'm5wobbf1',
-  token: 'sktWw8G9iPkIfIhLGEQ9kMo7zRwfUnvSyb5SSGZWfTmuSeMTAfioLvlmHusKHtDxTG2f5OirvZcz80qZwzigH4dQWdRoWOEUGHWjWvxAR0uDUHjEFPO0MbCl9G3StpzlFrxRMtuZn2M8LWW3y1gZmTADaKaWYxAGJHRdFNnSrfZjI2T2Tj2j',
-  
-  apiVersion: '2022-07-21',
+  dataset: process.env.SANITY_PROJECT_DATASET,
+  projectId: process.env.SANITY_PROJECT_ID,
+  token: process.env.SANITY_API_TOKEN,
+  apiVersion: '2021-11-08',
   useCdn: false,
 });
 

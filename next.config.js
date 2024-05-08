@@ -1,10 +1,10 @@
 const sanityClient = require('@sanity/client')
 const client = sanityClient({
-  dataset: 'discobabes',
-  projectId: 'm5wobbf1',
-  token: 'sktWw8G9iPkIfIhLGEQ9kMo7zRwfUnvSyb5SSGZWfTmuSeMTAfioLvlmHusKHtDxTG2f5OirvZcz80qZwzigH4dQWdRoWOEUGHWjWvxAR0uDUHjEFPO0MbCl9G3StpzlFrxRMtuZn2M8LWW3y1gZmTADaKaWYxAGJHRdFNnSrfZjI2T2Tj2j',
+  dataset: process.env.SANITY_PROJECT_DATASET,
+  projectId: process.env.SANITY_PROJECT_ID,
   useCdn: false,
   apiVersion: '2021-03-25',
+
 })
 
 // see breakdown of code bloat
