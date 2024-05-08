@@ -9,7 +9,7 @@ const sanity = sanityClient({
   projectId: 'm5wobbf1',
   token: 'sktWw8G9iPkIfIhLGEQ9kMo7zRwfUnvSyb5SSGZWfTmuSeMTAfioLvlmHusKHtDxTG2f5OirvZcz80qZwzigH4dQWdRoWOEUGHWjWvxAR0uDUHjEFPO0MbCl9G3StpzlFrxRMtuZn2M8LWW3y1gZmTADaKaWYxAGJHRdFNnSrfZjI2T2Tj2j',
   
-  apiVersion: '2021-11-08',
+  apiVersion: '2022-07-21',
   useCdn: false,
 });
 
