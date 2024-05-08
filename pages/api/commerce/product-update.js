@@ -106,15 +106,15 @@ export default async function send(req, res) {
   }
 
   // Define product options if there is more than one variant group
-  const productOptions =
-    variantGroups?.length > 1
-      ? variantGroups.map((group) => ({
-        _key: group.id,
-        _type: 'productOption',
-        name: group.name,
-        values: group.options.map((option) => option.name),
-      }
-  )) : [];
+  // const productOptions =
+  //   variantGroups?.length > 1
+  //     ? variantGroups.map((group) => ({
+  //       _key: group.id,
+  //       _type: 'productOption',
+  //       name: group.name,
+  //       values: group.options.map((option) => option.name),
+  //     }
+  // )) : [];
 
   // Define product fields
   const productFields = {
@@ -129,7 +129,7 @@ export default async function send(req, res) {
     sku: sku,
     inStock: (inventory?.managed && inventory.available > 0) || true,
     lowStock: (inventory?.managed && inventory.available <= 4) || false,
-    values: productOptions,
+    // values: productOptions,
   };
 
   /*  ------------------------------ */
@@ -144,7 +144,7 @@ export default async function send(req, res) {
   sanityTransaction = sanityTransaction.createIfNotExists(product)
 
   // Unset options field first, to avoid patch set issues
-  sanityTransaction = sanityTransaction.patch(modelId, (patch) => patch.unset(['productOptions']))
+  // sanityTransaction = sanityTransaction.patch(modelId, (patch) => patch.unset(['productOptions']))
 
   // Patch (update) product document with core commerce data
   sanityTransaction = sanityTransaction.patch(modelId, (patch) => patch.set(productFields))
