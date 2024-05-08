@@ -1,7 +1,7 @@
 const sanityClient = require('@sanity/client')
 const client = sanityClient({
-  dataset: process.env.SANITY_PROJECT_DATASET,
-  projectId: process.env.SANITY_PROJECT_ID,
+  dataset: 'discobabes',
+  projectId: 'm5wobbf1',
   useCdn: process.env.NODE_ENV === 'production',
   apiVersion: '2021-03-25',
 })
