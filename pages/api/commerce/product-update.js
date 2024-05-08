@@ -88,7 +88,7 @@ export default async function send(req, res) {
     // the other price fields.
     price: { formatted_with_symbol: price },
     active,
-    variant_groups: variantGroups,
+    // variant_groups: variantGroups,
     permalink,
     inventory,
     sku,
