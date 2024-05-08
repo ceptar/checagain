@@ -3,7 +3,7 @@ const client = sanityClient({
   dataset: process.env.SANITY_PROJECT_DATASET,
   projectId: process.env.SANITY_PROJECT_ID,
   useCdn: false,
-  apiVersion: '2021-03-25',
+  apiVersion: '2021-11-08',
 
 })
 

@@ -101,14 +101,14 @@ export default {
       readOnly: true,
       fieldset: 'commerce',
     },
-    {
-      title: 'Variant groups',
-      name: 'options',
-      type: 'array',
-      of: [{ type: 'productOption' }],
-      readOnly: true,
-      fieldset: 'commerce'
-    },
+    // {
+    //   title: 'Variant groups',
+    //   name: 'options',
+    //   type: 'array',
+    //   of: [{ type: 'productOption' }],
+    //   readOnly: true,
+    //   fieldset: 'commerce'
+    // },
     {
       title: 'Deleted from commerce?',
       name: 'wasDeleted',

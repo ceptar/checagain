@@ -34,16 +34,20 @@ export default {
   ],
   preview: {
     select: {
-      photos: 'photos',
+      photos: 'photos'
+      ,
       forOption: 'forOption'
     },
-    prepare({ photos, forOption }) {
+    prepare({ photos
+      , forOption 
+    }) {
       const option = forOption ? forOption.split(':') : null
       return {
         title:
           option && option.length > 1
             ? `${option[0]}: ${option[1]}`
-            : 'All Variants',
+            : 
+            'All Variants',
         media: photos ? photos[0] : null
       }
     }
