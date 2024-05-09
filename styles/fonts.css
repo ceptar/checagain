@@ -1,23 +1,22 @@
-@font-face {
-    font-family: MetroRegular;
-    src: url("/fonts/Metropolitano-Regular.woff");
-    format: ("woff");
-    font-display: swap;
-  }
-  
-  @font-face {
-    font-family: MediumFont;
-    src: url("/fonts/Medium.woff2");
-    format: ("woff2");
-    font-display: swap;
-  }
-  
   @font-face {
     font-family: MetroLight;
     src: url("/fonts/Metropolitano-Light.woff2");
     format: ("woff2");
     font-display: swap;
   }
+  @font-face {
+    font-family: MetroRegular;
+    src: url("/fonts/Metropolitano-Regular.woff");
+    format: ("woff");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: MediumFont;
+    src: url("/fonts/Medium.woff2");
+    format: ("woff2");
+    font-display: swap;
+  }
+
   /* @font-face {
     font-family: MetroBold;
     src: url("/fonts/Metropolitano-Bold.woff2");

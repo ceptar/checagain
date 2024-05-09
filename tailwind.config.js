@@ -75,7 +75,7 @@ module.exports = {
         sans: ['MetroLight', 'sans-serif'],  // Replace 'MyFont' with your actual font name
         semibold: ['MediumFont', 'sans-serif'],
         bold: ['MediumFont', 'sans-serif'],
-        normal: ['Metro', 'sans-serif'],
+        normal: ['MetroRegular', 'sans-serif'],
         inherit: ['MetroLight', 'sans-serif'],
       },
       fontSize: {

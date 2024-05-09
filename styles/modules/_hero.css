@@ -26,8 +26,8 @@
   }
 
   &--content {
-    @apply w-full max-w-5xl mx-auto px-4 text-center text-white;
-    padding-top: calc(var(--headerHeight) + 2rem);
-    padding-bottom: var(--headerHeight);
+    @apply w-full max-w-5xl mx-auto px-8 text-left text-white mt-[60vh];
+
+
   }
 }

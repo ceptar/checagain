@@ -27,7 +27,7 @@
   /* Headlines */
   h1,
   .is-h1 {
-    @apply m-0 text-5xl font-normal leading-tight;
+    @apply m-0 text-5xl font-semibold leading-tight;
   }
 
   h2,
