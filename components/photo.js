@@ -4,6 +4,39 @@ import cx from 'classnames'
 
 import { buildSrcSet, buildSrc } from '@lib/helpers'
 
+const getSize = (layout, position) => {
+  let classes = '';
+
+  switch (layout) {
+    case 'intrinsic':
+    case 'fill':
+      classes += ' object-cover';
+      break;
+    case 'contain':
+      classes += ' object-contain';
+      break;
+    default:
+      break;
+  }
+
+  // Add handling for object-position based on position prop
+  switch (position) {
+    case 'left':
+      classes += ' object-left';
+      break;
+    case 'center':
+      classes += ' object-center';
+      break;
+    case 'right':
+      classes += ' object-right';
+      break;
+    default:
+      break;
+  }
+
+  return classes.trim();
+};
+
 const Photo = ({
   photo,
   width,
@@ -11,6 +44,7 @@ const Photo = ({
   srcSizes = [400, 600, 800, 1000, 1200],
   sizes = '(min-width: 940px) 50vw, 100vw',
   layout = 'intrinsic',
+  position = 'center',
   quality = 80,
   hasPlaceholder = true,
   forceLoad,
@@ -79,7 +113,7 @@ const Photo = ({
             decoding="async"
             onLoad={handleLoad}
             alt={photo.alt || photo.asset?.altText}
-            className={cx(getSize(layout), { 'is-loaded': isLoaded })}
+            className={cx(getSize(layout, position), { 'is-loaded': isLoaded })}
           />
         </picture>
 
@@ -91,17 +125,6 @@ const Photo = ({
       </div>
     </figure>
   )
-}
-
-const getSize = (layout) => {
-  switch (layout) {
-    case 'intrinsic':
-      return 'object-cover'
-    case 'fill':
-      return 'object-cover'
-    case 'contain':
-      return 'object-contain'
-  }
 }
 
 export default Photo
