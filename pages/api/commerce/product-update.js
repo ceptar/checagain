@@ -77,20 +77,6 @@ export default async function send(req, res) {
     console.info('Sync complete, product deleted!');
     return res.status(200).json(result);
   }
-// Function to ensure 'shape' and 'color' are strings or empty strings
-function checkAndConvertAttributes(attributes) {
-  // Find the 'shape' and 'color' attributes in the array
-  const shapeAttribute = attributes.find(attr => attr.id === 'attr_kpnNwAyXbwmXB3');
-  const colorAttribute = attributes.find(attr => attr.id === 'attr_NqKE50bZ3wdgBL');
-
-  // Ensure 'shape' is a string or an empty string
-  const shapeValue = shapeAttribute && typeof shapeAttribute.value === 'string' ? shapeAttribute.value : '';
-  
-  // Ensure 'color' is a string or an empty string
-  const colorValue = colorAttribute && typeof colorAttribute.value === 'string' ? colorAttribute.value : '';
-  
-  return { shapeValue, colorValue };
-}
   // Handle products being created or updated
   // Extract the Commerce data from the webhook payload. The payloads are product responses.
   const { body: { payload: {
@@ -109,8 +95,17 @@ function checkAndConvertAttributes(attributes) {
 
   } } } = req;
 
-// Apply the function to check and convert attributes
-const { shapeValue, colorValue } = checkAndConvertAttributes(attributes);
+
+ // Function to find an attribute by its ID from the attributes array
+ const findAttributeById = (attributes, id) => {
+  return attributes.find(attr => attr.id === id);
+};
+
+const idShapeAttribute = findAttributeById(attributes, 'attr_kpnNwAyXbwmXB3');
+const idColorAttribute = findAttributeById(attributes, 'attr_NqKE50bZ3wdgBL');
+
+const idShapeValue = idShapeAttribute ? idShapeAttribute.value : null;
+const idColorValue = idColorAttribute ? idColorAttribute.value : null;
 
 // Now use 'shapeValue' and 'colorValue' in your product objects and transaction
 
