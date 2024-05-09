@@ -101,6 +101,18 @@ export default {
       readOnly: true,
       fieldset: 'commerce',
     },
+    {
+      name: 'idshape',
+      title: 'Shape',
+      type: 'string',
+      description: 'The shape attribute of the product.',
+    },
+      {
+        name: 'idcolor',
+        title: 'Color',
+        type: 'string',
+        description: 'The color attribute of the product.',
+      },
     // {
     //   title: 'Variant groups',
     //   name: 'options',

@@ -8,20 +8,20 @@ export default {
   type: 'object',
   icon: Stack,
   fields: [
-    {
-      title: 'Wich Variants is this for?',
-      name: 'forOption',
-      type: 'string',
-      options: {
-        list: [{ title: 'All', value: '' }],
-        fromField: 'options',
-        fromSubField: 'values',
-        fromFieldData: {
-          title: 'name',
-          value: 'position'
-        }
-      }
-    },
+    // {
+    //   title: 'Wich Variants is this for?',
+    //   name: 'forOption',
+    //   type: 'string',
+    //   options: {
+    //     list: [{ title: 'All', value: '' }],
+    //     fromField: 'options',
+    //     fromSubField: 'values',
+    //     fromFieldData: {
+    //       title: 'name',
+    //       value: 'position'
+    //     }
+    //   }
+    // },
     {
       title: 'Gallery Photo(s)',
       name: 'photos',
@@ -35,18 +35,18 @@ export default {
   preview: {
     select: {
       photos: 'photos'
-      ,
-      forOption: 'forOption'
+      // ,
+      // forOption: 'forOption'
     },
     prepare({ photos
-      , forOption 
+      // , forOption 
     }) {
-      const option = forOption ? forOption.split(':') : null
+      // const option = forOption ? forOption.split(':') : null
       return {
         title:
-          option && option.length > 1
-            ? `${option[0]}: ${option[1]}`
-            : 
+          // option && option.length > 1
+          //   ? `${option[0]}: ${option[1]}`
+          //   : 
             'All Variants',
         media: photos ? photos[0] : null
       }

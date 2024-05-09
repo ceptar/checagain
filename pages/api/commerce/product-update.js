@@ -92,7 +92,20 @@ export default async function send(req, res) {
     permalink,
     inventory,
     sku,
+    attributes,
+
   } } } = req;
+
+  // Function to find an attribute by its ID from the attributes array
+const findAttributeById = (attributes, id) => {
+  return attributes.find(attr => attr.id === id);
+};
+
+const idShapeAttribute = findAttributeById(attributes, 'attr_kpnNwAyXbwmXB3');
+const idColorAttribute = findAttributeById(attributes, 'attr_NqKE50bZ3wdgBL');
+
+const idShapeValue = idShapeAttribute ? idShapeAttribute.value : null;
+const idColorValue = idColorAttribute ? idColorAttribute.value : null;
 
   /*  ------------------------------ */
   /*  Construct our product objects
@@ -127,6 +140,10 @@ export default async function send(req, res) {
     slug: permalink,
     // price: variants[0].price * 100,
     sku: sku,
+
+    idshape: idShapeValue,
+    idcolor: idColorValue,
+
     inStock: (inventory?.managed && inventory.available > 0) || true,
     lowStock: (inventory?.managed && inventory.available <= 4) || false,
     // values: productOptions,

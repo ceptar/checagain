@@ -11,16 +11,44 @@ export default {
       name: 'product',
       type: 'reference',
       to: [{ type: 'product' }]
-    }
+    },
+    {
+      title: 'Shape',
+      name: 'shape',
+      type: 'string'
+
+      },
+    {
+      title: 'Color',
+      name: 'color',
+      type: 'string'
+
+    },
   ],
+
   preview: {
     select: {
-      title: 'product.title'
+        title: 'product.title',
+        shape: 'product.idshape',
+        color: 'product.idcolor',
     },
-    prepare({ title }) {
-      return {
-        title: title || 'Product Card'
-      }
+    prepare({ title, shape, color }) {
+        return {
+            title: title || 'Product Card',
+            subtitle: `Shape: ${shape || 'N/A'}, Color: ${color || 'N/A'}`,
+        };
     }
-  }
 }
+}
+  
+//   preview: {
+//     select: {
+//       title: 'product.title'
+//     },
+//     prepare({ title }) {
+//       return {
+//         title: title || 'Product Card'
+//       }
+//     }
+//   }
+// }
